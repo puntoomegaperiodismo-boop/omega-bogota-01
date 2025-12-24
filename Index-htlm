@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omega Report - Nodo Bogotá_01</title>
+    <style>
+        :root {
+            --primary-cyan: #00f2ff;
+            --bg-dark: #0a0b10;
+            --card-bg: #161b22;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-cyan);
+            box-shadow: 0 0 15px var(--primary-cyan);
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin-top: 30px;
+        }
+        .status-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary-cyan);
+            margin-bottom: 20px;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .member {
+            background: #1f242d;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .highlight { color: var(--primary-cyan); font-weight: bold; }
+        footer { margin-top: auto; padding: 20px; font-size: 0.8em; opacity: 0.6; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>TRANSATLÁNTICO DIGITAL</h1>
+    <p>NODO BOGOTÁ_01 | <span class="highlight">ACTIVO</span></p>
+</header>
+
+<div class="container">
+    <div class="status-card">
+        <h2>Reporte General - Omega Scripts</h2>
+        <p>Fecha de Sincronización: <strong>24 de diciembre, 2025</strong></p>
+        <p>Director General: <span class="highlight">Javier Abreu</span></p>
+    </div>
+
+    <div class="team-grid">
+        <div class="member">
+            <p>Estratega de Contenido</p>
+            <h3 class="highlight">Marcela de Marteel</h3>
+        </div>
+        <div class="member">
+            <p>Arquitecto de Redes</p>
+            <h3 class="highlight">Crisopher Narayana</h3>
+        </div>
+    </div>
+
+    <div class="status-card" style="margin-top: 20px; border-left-color: #f2ff00;">
+        <h3>Estado de la Red</h3>
+        <p>Base de Datos Neon: <span style="color: #00ff00;">CONECTADA</span></p>
+        <p>Soberanía Digital: 100% Asegurada</p>
+    </div>
+</div>
+
+<footer>
+    © 2025 Punto Omega Periodismo - Protocolo OMEGA v1.0
+</footer>
+
+</body>
+</html>
