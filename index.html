@@ -3,30 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omega Report - Nodo Bogotá_01</title>
+    <title>Omega Ops - Centro de Mando Google</title>
     <style>
-        body { background-color: #0a0b10; color: white; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
-        .card { background: #161b22; padding: 2rem; border-radius: 15px; border: 1px solid #00f2ff; box-shadow: 0 0 20px rgba(0, 242, 255, 0.2); text-align: center; width: 80%; max-width: 500px; }
-        h1 { color: #00f2ff; margin-bottom: 0.5rem; }
-        .member { margin: 1rem 0; padding: 10px; background: #1f242d; border-radius: 8px; }
-        .highlight { color: #00f2ff; font-weight: bold; }
+        :root { --g-blue: #4285F4; --g-red: #EA4335; --g-yellow: #FBBC05; --g-green: #34A853; }
+        body { font-family: 'Roboto', sans-serif; background: #0a0c10; margin: 0; padding: 20px; color: #e6edf3; }
+        .dashboard { max-width: 1100px; margin: auto; background: #161b22; border-radius: 12px; border: 1px solid #30363d; box-shadow: 0 8px 32px rgba(0,0,0,0.5); overflow: hidden; }
+        .header { background: #0d1117; padding: 20px; border-bottom: 1px solid #30363d; display: flex; justify-content: space-between; align-items: center; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #30363d; }
+        .panel { background: #161b22; padding: 25px; }
+        h2 { font-size: 1.1rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; color: var(--g-blue); }
+        textarea { width: 100%; border: 1px solid #30363d; border-radius: 6px; padding: 12px; font-size: 0.9rem; margin-bottom: 15px; background: #0d1117; color: #3fb950; font-family: 'Courier New', monospace; }
+        .btn { width: 100%; padding: 14px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; color: white; text-transform: uppercase; letter-spacing: 1px; }
+        .status { font-size: 0.75rem; color: var(--g-green); font-weight: bold; }
+        .id-input { background: #1f242d; border: 1px dashed var(--g-blue); color: #58a6ff; padding: 10px; width: 95%; margin-bottom: 15px; border-radius: 4px; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>TRANSATLÁNTICO DIGITAL</h1>
-        <p>Nodo: <span class="highlight">Bogotá_01</span></p>
-        <hr style="border: 0.5px solid #30363d;">
-        <p>Director: <strong>Javier Abreu</strong></p>
-        
-        <div class="member">
-            <p>Estratega: <br><span class="highlight">Marcela de Marteel</span></p>
+    <div class="dashboard">
+        <div class="header">
+            <div style="font-weight: bold; color: var(--g-blue); letter-spacing: 2px;">OMEGA REPORT // NODO_01</div>
+            <div class="status">● MODO SATELITAL ACTIVO</div>
         </div>
-        <div class="member">
-            <p>Arquitecto: <br><span class="highlight">Crisopher Narayana</span></p>
+        <div class="grid">
+            <div class="panel">
+                <h2>🤖 IA GEMINI (Google News)</h2>
+                <p style="font-size: 0.8rem; color: #8b949e;">Procesamiento automático por sección:</p>
+                <div style="background: #0d1117; padding: 15px; border-radius: 6px; font-family: monospace; font-size: 0.85rem; height: 160px; overflow-y: auto; color: #58a6ff; border: 1px solid #30363d;">
+                    > Conectando con Google News API...<br>
+                    > Filtrando sección: TECNOLOGÍA...<br>
+                    > Editando resumen para Avatar...<br>
+                    > [LISTO PARA DESPACHO]
+                </div>
+                <button class="btn" style="background: var(--g-blue); margin-top: 20px;">AUTORIZAR TRANSMISIÓN IA</button>
+            </div>
+
+            <div class="panel" style="border-left: 1px solid #30363d;">
+                <h2 style="color: var(--g-green);">👤 EDICIÓN HUMANA</h2>
+                <p style="font-size: 0.8rem; color: #8b949e;">Revisión de periodista y pegado de IDs:</p>
+                <textarea rows="4" placeholder="Pegue aquí la noticia de Google Noticias..."></textarea>
+                <textarea rows="4" placeholder="Script final para narración del avatar..."></textarea>
+                <input type="text" class="id-input" placeholder="Pegar ID del Avatar / Plantilla aquí">
+                <button class="btn" style="background: var(--g-green);">ENVIAR A PRODUCCIÓN MANUAL</button>
+            </div>
         </div>
-        
-        <p style="font-size: 0.8rem; opacity: 0.7;">Sincronizado: 24 de diciembre, 2025</p>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <p style="color: #8b949e; font-size: 0.8rem;">DIRECTOR: JAVIER ALBERTO ABREU MOLINA</p>
+        <p style="color: var(--g-blue); font-size: 0.7rem;">SISTEMA EN LA NUBE (NETLIFY) - SOBERANÍA DIGITAL</p>
     </div>
 </body>
 </html>
