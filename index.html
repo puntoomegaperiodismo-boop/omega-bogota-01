@@ -48,24 +48,45 @@
         </div>
     </div>
 
-    <script>
-        // Esta es la lógica básica para que los botones funcionen
-        function captarNoticias() {
-            const out = document.getElementById('ai-output');
-            out.innerHTML += "<br>> Buscando noticias de última hora...";
-            setTimeout(() => {
-                out.innerHTML = "> [NOTICIA PROCESADA]<br>Google anuncia nuevas APIs para periodistas certificados. Javier Abreu lidera la implementación en el Nodo Bogotá.";
-            }, 1000);
+  <script>
+    // PROTOCOLO OMEGA: Gestión de Secciones
+    const secciones = {
+        tecnologia: "Últimas tendencias en IA y Gadgets de Google",
+        finanzas: "Reporte de mercados globales y Cripto",
+        periodismo: "Herramientas de Google News Initiative"
+    };
+
+    function captarNoticias() {
+        const out = document.getElementById('ai-output');
+        out.innerHTML = "<span style='color:var(--g-yellow)'>> CONECTANDO CON GOOGLE NEWS API...</span>";
+        
+        // Simulación de procesamiento de Gemini
+        setTimeout(() => {
+            out.innerHTML = `
+                <div style="color:var(--g-blue)">[SECCIÓN: TECNOLOGÍA]</div>
+                <div style="margin-top:5px;">${secciones.tecnologia}</div>
+                <hr style="border:0; border-top:1px solid #333; margin:10px 0;">
+                <div style="color:var(--g-green)">[RESUMEN PARA AVATAR]:</div>
+                "Google lanza nuevas actualizaciones para periodistas. El Nodo Bogotá_01 ya está operativo bajo la dirección de Javier Abreu."
+                <div style="font-size:0.7rem; color:var(--g-grey); margin-top:10px;">ID SUGERIDA: OMEGA-AVATAR-PRO-01</div>
+            `;
+        }, 1500);
+    }
+
+    function enviarAProduccion() {
+        const script = document.getElementById('manual-script').value;
+        const id = document.getElementById('avatar-id').value;
+        
+        if(!script || !id) {
+            alert("⚠️ ERROR DE PROTOCOLO: Asegúrese de tener el script editado y la ID del Avatar.");
+            return;
         }
 
-        function enviarAProduccion() {
-            const id = document.getElementById('avatar-id').value;
-            if(!id) {
-                alert("Director, falta pegar la ID del Avatar.");
-            } else {
-                alert("✅ Script enviado a producción con ID: " + id);
-            }
-        }
-    </script>
+        // Copia automática al portapapeles para facilitar el pegado al avatar
+        navigator.clipboard.writeText(script).then(() => {
+            alert("✅ DESPACHO ENVIADO: Script copiado al portapapeles. Use la ID: " + id + " en su plantilla de Google Drive.");
+        });
+    }
+</script>
 </body>
 </html>
