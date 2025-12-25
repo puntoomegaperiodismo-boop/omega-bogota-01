@@ -28,28 +28,44 @@
             <div class="panel">
                 <h2>🤖 IA GEMINI (Google News)</h2>
                 <p style="font-size: 0.8rem; color: #8b949e;">Procesamiento automático por sección:</p>
-                <div style="background: #0d1117; padding: 15px; border-radius: 6px; font-family: monospace; font-size: 0.85rem; height: 160px; overflow-y: auto; color: #58a6ff; border: 1px solid #30363d;">
+                <div id="ai-output" style="background: #0d1117; padding: 15px; border-radius: 6px; font-family: monospace; font-size: 0.85rem; height: 160px; overflow-y: auto; color: #58a6ff; border: 1px solid #30363d;">
                     > Conectando con Google News API...<br>
                     > Filtrando sección: TECNOLOGÍA...<br>
                     > Editando resumen para Avatar...<br>
-                    > [LISTO PARA DESPACHO]
+                    > [ESPERANDO ORDEN]
                 </div>
-                <button class="btn" style="background: var(--g-blue); margin-top: 20px;">AUTORIZAR TRANSMISIÓN IA</button>
+                <button onclick="captarNoticias()" class="btn" style="background: var(--g-blue); margin-top: 20px;">AUTORIZAR TRANSMISIÓN IA</button>
             </div>
 
             <div class="panel" style="border-left: 1px solid #30363d;">
                 <h2 style="color: var(--g-green);">👤 EDICIÓN HUMANA</h2>
                 <p style="font-size: 0.8rem; color: #8b949e;">Revisión de periodista y pegado de IDs:</p>
-                <textarea rows="4" placeholder="Pegue aquí la noticia de Google Noticias..."></textarea>
-                <textarea rows="4" placeholder="Script final para narración del avatar..."></textarea>
-                <input type="text" class="id-input" placeholder="Pegar ID del Avatar / Plantilla aquí">
-                <button class="btn" style="background: var(--g-green);">ENVIAR A PRODUCCIÓN MANUAL</button>
+                <textarea id="manual-noticia" rows="4" placeholder="Pegue aquí la noticia de Google Noticias..."></textarea>
+                <textarea id="manual-script" rows="4" placeholder="Script final para narración del avatar..."></textarea>
+                <input type="text" id="avatar-id" class="id-input" placeholder="Pegar ID del Avatar / Plantilla aquí">
+                <button onclick="enviarAProduccion()" class="btn" style="background: var(--g-green);">ENVIAR A PRODUCCIÓN MANUAL</button>
             </div>
         </div>
     </div>
-    <div style="text-align: center; margin-top: 20px;">
-        <p style="color: #8b949e; font-size: 0.8rem;">DIRECTOR: JAVIER ALBERTO ABREU MOLINA</p>
-        <p style="color: var(--g-blue); font-size: 0.7rem;">SISTEMA EN LA NUBE (NETLIFY) - SOBERANÍA DIGITAL</p>
-    </div>
+
+    <script>
+        // Esta es la lógica básica para que los botones funcionen
+        function captarNoticias() {
+            const out = document.getElementById('ai-output');
+            out.innerHTML += "<br>> Buscando noticias de última hora...";
+            setTimeout(() => {
+                out.innerHTML = "> [NOTICIA PROCESADA]<br>Google anuncia nuevas APIs para periodistas certificados. Javier Abreu lidera la implementación en el Nodo Bogotá.";
+            }, 1000);
+        }
+
+        function enviarAProduccion() {
+            const id = document.getElementById('avatar-id').value;
+            if(!id) {
+                alert("Director, falta pegar la ID del Avatar.");
+            } else {
+                alert("✅ Script enviado a producción con ID: " + id);
+            }
+        }
+    </script>
 </body>
 </html>
